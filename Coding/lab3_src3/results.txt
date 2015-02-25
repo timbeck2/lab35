@@ -1,0 +1,72 @@
+STARTING CNIT 315 LAB 3 TEST SUITE...
+
+
+>STARTING RANDOM GENERATOR TEST:
+	'array is NULL' check: PASS.
+	'array size<0' check: PASS.
+	'generating array an of length 10' check: PASS.
+	'generating array an of length 50' check: PASS.
+	'generating array an of length 100' check: PASS.
+	'generating array an of length 500' check: PASS.
+	'generating array an of length 1000' check: PASS.
+	'generating array an of length 5000' check: PASS.
+	'generating array an of length 10000' check: PASS.
+	'generating array an of length 15000' check: PASS.
+	'generating array an of length 20000' check: PASS.
+>RANDOM GENERATOR TEST COMPLETE STATUS: PASS!
+
+>STARTING BUBBLE SORT TEST:
+	'unsorted array is NULL' check: PASS.
+	'sorted array is NULL' check: PASS.
+	'sorted array size < 0' check: PASS.
+	'call bubble_sort()' check: PASS.
+	'original unsorted array not modified' check: PASS.
+	'correctly sorted output' check: PASS.
+>BUBBLE SORT TEST COMPLETE STATUS: PASS!
+
+>STARTING SELECTION SORT TEST:
+	'unsorted array is NULL' check: PASS.
+	'sorted array is NULL' check: PASS.
+	'sorted array size < 0' check: PASS.
+	'call selection_sort()' check: PASS.
+	'original unsorted array not modified' check: PASS.
+	'correctly sorted output' check: PASS.
+>SELECTION SORT TEST COMPLETE STATUS: PASS!
+
+>STARTING INSERTION SORT TEST:
+	'unsorted array is NULL' check: PASS.
+	'sorted array is NULL' check: PASS.
+	'sorted array size < 0' check: PASS.
+	'call insertion_sort()' check: PASS.
+	'original unsorted array not modified' check: PASS.
+	'correctly sorted output' check: PASS.
+>INSERTION SORT TEST COMPLETE STATUS: PASS!
+
+>STARTING LINEAR SEARCH TEST:
+	'array is NULL' check: PASS.
+	'location pointer is NULL' check: PASS.
+	'sorted array size < 0' check: PASS.
+	'sorted array size = 0' check: PASS.
+	'non-existent values' check: PASS.
+	'valid searches' check: PASS.
+>LINEAR SEARCH TEST COMPLETE STATUS: PASS!
+
+>STARTING BINARY SEARCH TEST:
+	'array is NULL' check: PASS.
+	'location pointer is NULL' check: PASS.
+	'sorted array_sorted size < 0' check: PASS.
+	'sorted array_sorted size = 0' check: PASS.
+	'non-existent values' check: PASS.
+	'unsorted array search' check: PASS.
+	'valid searches' check: PASS.
+>BINARY SEARCH TEST COMPLETE STATUS: PASS!
+
+
+
+ Total errors found: 0
+
+
+ >>> GOOD JOB!! <<<
+
+
+		CNIT 315 LAB 3 TEST SUITE COMPLETE.

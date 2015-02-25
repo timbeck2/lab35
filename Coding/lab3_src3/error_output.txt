@@ -1,0 +1,20 @@
+tim@tim-Parallels-Ubuntu:~/Desktop/Link to lab3_src3$ ./lab3_tester.out 2> results.txt
+Error: Input array was NULL
+Error: required array size < 1
+Error: Unsorted array was NULL
+Error: sorted array is NULL
+Error: unsorted array size < 1
+Error: Unsorted array was NULL
+Error: sorted array is NULL
+Error: unsorted array size < 1
+Error: Unsorted array was NULL
+Error: sorted array is NULL
+Error: unsorted array size < 1
+Error: array pointer is NULL
+Error: location variable is NULL
+Error: array size < 1
+Error: array size < 1
+Segmentation fault (core dumped)
+tim@tim-Parallels-Ubuntu:~/Desktop/Link to lab3_src3$ 
+
+
