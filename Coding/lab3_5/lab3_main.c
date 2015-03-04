@@ -104,7 +104,7 @@ int main(){
 
       end = clock();
       printf("Sorting Completed Successfully\n");
-      time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+      time_spent = ((double)(end - begin) / CLOCKS_PER_SEC)*1000000; // microseconds
       printf("Execution Time: %lf \n", time_spent);
     break;
     case 2 :
@@ -117,7 +117,7 @@ int main(){
       selection_sort(unsorted_arr, array_size, sorted_arr);
 
       end = clock();
-      time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+      time_spent = ((double)(end - begin) / CLOCKS_PER_SEC)*1000000; // in microseconds
       printf("Selection Sort Completed");
       printf("Execution Time: %lf \n", time_spent);
     break;
@@ -132,7 +132,7 @@ int main(){
       insertion_sort(unsorted_arr, array_size, sorted_arr);
 
       end = clock();
-      time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+      time_spent = ((double)(end - begin) / CLOCKS_PER_SEC)*1000000; // in microseconds
 
       /*for (i = 0; i < array_size; i++)
         {
@@ -152,7 +152,7 @@ int main(){
       linear_search(unsorted_arr, array_size, searchfor, &found_loc);
       
       end = clock();
-      time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+      time_spent = ((double)(end - begin) / CLOCKS_PER_SEC)*1000000; // in microseconds
       printf("\n\nExecution Time: %lf \n", time_spent);
       
       if (found_loc != -1) {
@@ -189,7 +189,7 @@ int main(){
       insertion_sort(unsorted_arr, array_size, sorted_arr); 
       end = clock();
       
-      time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+      time_spent = ((double)(end - begin) / CLOCKS_PER_SEC)*1000000; // in microseconds
       sort_time_spent = time_spent;
       total_time_spent = time_spent;
 
@@ -198,7 +198,7 @@ int main(){
       binary_search(sorted_arr, array_size, searchfor, &found_loc);
       end = clock();
       
-      time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+      time_spent = ((double)(end - begin) / CLOCKS_PER_SEC)*1000000; // in microseconds
       total_time_spent = total_time_spent + time_spent;
       
       // Output Results
@@ -242,8 +242,8 @@ int main(){
         array_size = temp;
         
         // Clear previous arrays from memory
-        free(unsorted_arr);
-        free(sorted_arr);
+        //free(unsorted_arr);
+        //free(sorted_arr);
 
         // Create new arrays with new size
         int * unsorted_arr = malloc(array_size * sizeof(int));
@@ -269,8 +269,8 @@ int main(){
 
 
 	/* Wrap up */
-  free(unsorted_arr);
-  free(sorted_arr);
+  //free(unsorted_arr);
+  //free(sorted_arr);
 
 	return 0;
 }
