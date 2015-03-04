@@ -11,10 +11,11 @@
 * Collaborators:
 * Chris Fox
 * Everett Kennedy
-*Select Statement Resource: http://www.tutorialspoint.com/cprogramming/c_decision_making.htm
 *
+* Select Statement Resource: http://www.tutorialspoint.com/cprogramming/c_decision_making.htm
 * Find time of exection: http://stackoverflow.com/questions/5248915/execution-time-of-c-program
 * Malloc Help: http://en.wikipedia.org/wiki/C_dynamic_memory_allocation
+*
 */
 
 #include <time.h> //for time()
@@ -35,10 +36,10 @@ int main(){
 	srand(time(NULL));
 
   // Set the array size HERE
-  int array_size = 10000;
-
-  int i;
-  int selection = 0;
+  int array_size = 50; // array size variable initialized to 50 but will be changed by user
+  int temp = 1; // Used to hold good array size in case of new bad size
+  int i; // counter
+  int selection = 0; // Menu Selection Variable
   
   //int unsorted_arr[array_size];
   //int sorted_arr[array_size];
@@ -53,18 +54,27 @@ int main(){
 
 
 	//Your code goes here!
-  
-  printf("\n\n How big of an array would you like to sort or search?\n");
-  scanf("%d", &array_size);
+  while (1) {
+    printf("\n\n How big of an array would you like to sort or search?\n");
+    scanf("%d", &array_size);
+
+    if (array_size <= 0 || array_size > 70000) {
+      printf("Error, please enter a value between 1 and 70,000\n");
+      }
+    else {
+      break;
+    }
+  }
+
   int * unsorted_arr = malloc(array_size * sizeof(int));
   int * sorted_arr = malloc(array_size * sizeof(int));
 
-  if ( NULL == (unsorted_arr = malloc(10 * sizeof(int))) ) {
+  if ( NULL == (unsorted_arr = malloc(array_size * sizeof(int))) ) {
   printf("Unsorted Array Malloc Failed\n");
   return(-1);
   }
 
-  if ( NULL == (sorted_arr = malloc(10 * sizeof(int))) ) {
+  if ( NULL == (sorted_arr = malloc(array_size * sizeof(int))) ) {
   printf("Sorted Array Malloc Failed\n");
   return(-2);
   }
@@ -81,7 +91,7 @@ int main(){
     {
     case -1 :
       printf("\e[1;1H\e[2J");
-      printf("Goodbye... \n\n\n");
+      printf("\n\n\nGoodbye... \n\n\n");
       return 0;
     case 1 :
       // Option to Bubble Sort
@@ -221,26 +231,35 @@ int main(){
     break;
     case 6 :
       // Option To Change Array Size
-      
       printf("\n\n How big of an array would you like to sort or search?\n");
-      scanf("%d", &array_size);
+      scanf("%d", &temp);
 
-      free(unsorted_arr);
-      free(sorted_arr);
-
-      int * unsorted_arr = malloc(array_size * sizeof(int));
-      int * sorted_arr = malloc(array_size * sizeof(int));
-
-      if ( NULL == (unsorted_arr = malloc(10 * sizeof(int))) ) {
-      printf("Unsorted Array Malloc Failed\n");
-      return(-1);
+      if (temp <= 0 || temp > 70000) {
+        printf("Error, please enter a value between 1 and 70,000\n");
       }
+      else {
 
-      if ( NULL == (sorted_arr = malloc(10 * sizeof(int))) ) {
-      printf("Sorted Array Malloc Failed\n");
-      return(-2);
-      }
+        array_size = temp;
+        
+        // Clear previous arrays from memory
+        free(unsorted_arr);
+        free(sorted_arr);
 
+        // Create new arrays with new size
+        int * unsorted_arr = malloc(array_size * sizeof(int));
+        int * sorted_arr = malloc(array_size * sizeof(int));
+
+        // Error Check for failed array creation
+        if ( NULL == (unsorted_arr = malloc(array_size * sizeof(int))) ) {
+        printf("Unsorted Array Malloc Failed\n");
+        return(-1);
+        }
+
+        if ( NULL == (sorted_arr = malloc(array_size * sizeof(int))) ) {
+        printf("Sorted Array Malloc Failed\n");
+        return(-2);
+        }
+      }      
     break;
     default :
       //Option if an invalid selection is made
